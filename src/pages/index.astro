@@ -1,15 +1,21 @@
 ---
+import Layout from "../layouts/Root.astro";
+import { getPhotos } from "../repository/api";
+const photos = await getPhotos();
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="포토 - roco.moe">
+  <h1 class:list={["text-2xl"]}>사진을 찍고 전시하는 공간</h1>
+  <ul>
+    {
+      photos.map((photo) => (
+        <li>
+          <img
+            src={`${import.meta.env.PUBLIC_CDN}/${photo.Key}`}
+            alt={photo.Key}
+          />
+        </li>
+      ))
+    }
+  </ul>
+</Layout>

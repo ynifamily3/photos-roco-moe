@@ -1,0 +1,26 @@
+---
+import "../styles/base.css";
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+
+const { title } = Astro.props;
+---
+
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <BaseHead title={title} />
+  </head>
+  <body>
+    <!-- <nav>
+      <a href="/photo/1">사진 1</a>
+      <a href="/photo/2">사진 2</a>
+      <a href="/photo/3">사진 3</a>
+    </nav> -->
+    <article>
+      <slot />
+    </article>
+    <Footer />
+  </body>
+</html>

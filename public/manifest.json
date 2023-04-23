@@ -1,0 +1,13 @@
+{
+  "name": "포토 - roco.moe",
+  "short_name": "포토",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "512x512"
+    }
+  ],
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "display": "fullscreen"
+}
